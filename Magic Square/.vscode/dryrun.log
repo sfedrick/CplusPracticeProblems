@@ -1,0 +1,6 @@
+make.exe --dry-run --keep-going --print-directory
+make.exe: Entering directory `c:/Users/shaun/Programs/C/C++ review'
+g++ -I./ -g -Og -std=c++14  hello.cpp -o helloEX
+ 
+make.exe: Leaving directory `c:/Users/shaun/Programs/C/C++ review'
+ 
