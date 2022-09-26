@@ -11,3 +11,5 @@ the make file is structure in this way
 run: (neededRule)
     ./neededFileEX
 see GNUmakefile for an example
+
+use make (RuleName) to run a make command

@@ -11,4 +11,4 @@ run: main
 	./magicsquare
 
 clean:
-	-rm -fr helloEX *~ *.o key.* letter
+	-rm -fr *.out *exe
