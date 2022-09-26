@@ -28,8 +28,12 @@ public:
 
 int main() {
     int n;
+    cout<<"enter number of rooms\n";
     cin >> n;
     vector<HotelRoom*> rooms;
+    vector<HotelApartment*> Arooms;
+    cout<<"enter room params\n";
+    cout<<"Type #Beds #Baths\n";
     for (int i = 0; i < n; ++i) {
         string room_type;
         int bedrooms;
@@ -38,12 +42,15 @@ int main() {
         if (room_type == "standard") {
             rooms.push_back(new HotelRoom(bedrooms, bathrooms));
         } else {
-            rooms.push_back(new HotelApartment(bedrooms, bathrooms));
+            Arooms.push_back(new HotelApartment(bedrooms, bathrooms));
         }
     }
 
     int total_profit = 0;
     for (auto room : rooms) {
+        total_profit += room->get_price();
+    }
+    for (auto room : Arooms) {
         total_profit += room->get_price();
     }
     cout << total_profit << endl;
