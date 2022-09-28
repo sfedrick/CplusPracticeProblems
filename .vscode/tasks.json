@@ -4,10 +4,12 @@
             "type": "cppbuild",
             "label": "C/C++: g++ build active file",
             "command": "/usr/bin/g++",
+            // make args the same as your make run command 
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
                 "${file}",
+                "class.cpp",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
             ],
