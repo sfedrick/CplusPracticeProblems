@@ -2,14 +2,15 @@
 
 void printLink(ListNode *l1){
     int end = l1 ->next ->val;
-    end = 5;
-    while (end!=0){
+    end = 1;
+    while (l1){
+        cout<<"pointer value: "<<l1<<endl;
         cout<<l1->val<<endl;
-        //end = l1->next->val;
-        //l1 = l1 -> next;
-        end--;
+        l1= l1->next;
     }  
+    cout<<"pointer value: "<<l1<<endl;
 }
+    
 
 void array2LL( int list[]){
     int size = *(&list + 1) - list;
@@ -22,7 +23,9 @@ void array2LL( int list[]){
     list[0]=223;
 }
 int main() {
-    ListNode *l1 = new ListNode(2);
+    ListNode *l2 = new ListNode(0);
+    ListNode *l1 = new ListNode(2,l2);
+    
     printLink(l1);
     return 0;
 }
