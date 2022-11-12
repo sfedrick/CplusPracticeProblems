@@ -4,7 +4,7 @@ LDFLAGS :=
 
 all: run
 
-run: main.cpp class.cpp
+class: main.cpp class.cpp
 	$(CXX) $(CFLAGS) $(LDFLAGS) main.cpp class.cpp -o classEX
 
 run: class
