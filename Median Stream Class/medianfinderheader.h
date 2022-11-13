@@ -2,7 +2,8 @@ using namespace std;
 #include <vector>
 class MedianFinder {
 private:
-    vector<int> array = {};
+    vector<int> med_array = {};
+    int insert_pos(int num);
 public:
     MedianFinder();
     void addNum(int num);
