@@ -3,7 +3,7 @@
 
     
     MedianFinder::MedianFinder(){
-        
+         med_array.reserve(50000);
     };
 
      void MedianFinder::print_array(){
