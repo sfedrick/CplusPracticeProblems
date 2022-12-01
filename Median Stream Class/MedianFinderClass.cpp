@@ -31,14 +31,52 @@
         return insert_num;
 
     };
+
+    int MedianFinder::insert_pos_binary(vector<int> y,int start, int end, int num){
+        int middle = ((end-start)/2)+start;
+  
+        if(start == end){
+            if(num > y[start]){
+                return start +1;
+            }
+            else{
+                return start;
+            }
+        }
+         else if(end-start==1){
+            if(num > y[end]){
+                return end +1;
+            }
+            else if (num > y[start]) {
+                return end;
+            }
+            else {
+               return start;
+            }
+
+        }
+        else if( y[middle]> num){
+            end = middle ;
+        }
+        else if (y[middle]< num){
+            start = middle ;
+
+        }
+        else{
+            start = middle;
+            end = middle;
+        }
+         return insert_pos_binary(y,start,end, num);
+    };
+
     
     void MedianFinder::addNum(int num) {
-        int location = (*this).insert_pos(num);
         auto it = med_array.begin();
         if(med_array.size()==0){
             med_array.insert(it,num);
         }
         else{
+            int location = (*this).insert_pos_binary(med_array,0,med_array.size()-1,num);
             med_array.insert(it+location,num);
         }
         

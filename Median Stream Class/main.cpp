@@ -13,6 +13,7 @@ void test_med(vector<int> y){
             if(x){
                 obj->addNum(x);
             }
+
             cout<<"add:"<<x <<" Median:"<<obj -> findMedian()<<endl;
             cout<< "array : ";
             obj -> print_array();
@@ -21,29 +22,63 @@ void test_med(vector<int> y){
 }
 
 
+int binarySearch(vector<int> arr, int item, int low, int high) {
+   
+   
+}
 
+int insert_pos_binary(vector<int> y, int start,int end, int num){
+      int middle = ((end-start)/2)+start;
+  
+        if(start == end){
+            if(num > y[start]){
+                return start +1;
+            }
+            else{
+                return start;
+            }
+        }
+        else if(end-start==1){
+            if(num > y[end]){
+                return end +1;
+            }
+            else if (num > y[start]) {
+                return end;
+            }
+            else {
+               return start;
+            }
+
+        }
+        else if( y[middle]> num){
+            end = middle ;
+        }
+        else if (y[middle]< num){
+            start = middle ;
+
+        }
+        else{
+            start = middle;
+            end = middle;
+        }
+   cout<< "start: "<< start <<", end: "<< end<<endl;
+   return insert_pos_binary(y,start,end, num);
+   
+   
+}
 
 int main() {
-  // vector <int> test ={6,10,2,6,5,0,6,3,1,0,0};
-  vector <int> test ={1,2,3};
-   //[6.00000,8.00000,6.00000,6.00000,6.00000,5.50000,6.00000,5.50000,5.00000,4.00000,3.00000]
-   MedianFinder* obj = new MedianFinder();
-   test_med(test);
-   // obj->addNum(6);
-   // obj->addNum(10);
-   // obj->addNum(2);
-   // obj->addNum(6);
-   //  obj->addNum(5);
-   //  obj->addNum(0);
-   // obj->print_array();
-   // cout<< obj -> findMedian()<<endl;
-   // vector<int> med_array = {};
-   // auto it = med_array.begin();
-   // med_array.insert(it,6);
-   // it = med_array.begin();
-   // med_array.insert(it+1,8);
-   // print_array(med_array);
+   // vector <int> test ={1,2,3};
+   // MedianFinder* obj = new MedianFinder();
+   // test_med(test);
+   
+ vector <int> test ={1,2};
+auto it = test.begin();
+int insertme=3;
+int insertnum = insert_pos_binary(test, 0, test.size()-1,insertme);
 
 
-
+cout<<insertnum<<endl;
+test.insert(it+insertnum,insertme);
+print_array(test);
 }
