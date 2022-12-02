@@ -1,15 +1,3 @@
-use g++ file 
-this file should contain a main function 
-then run executable to see output with
-./a.exe
+Given a signed 32-bit integer x, return x with its digits reversed. If reversing x causes the value to go outside the signed 32-bit integer range [-231, 231 - 1], then return 0.
 
-the make file is structure in this way 
-(RuleName): (neededRule or neededfile) <-this rule needs to be compiled
-    what runs when (RuleName) is called after make
-(neededRule):  neededFile.cpp
-    g++ neededFile.cpp -o neededFileEX
-run: (neededRule)
-    ./neededFileEX
-see GNUmakefile for an example
-
-use make (RuleName) to run a make command
+Assume the environment does not allow you to store 64-bit integers (signed or unsigned).
