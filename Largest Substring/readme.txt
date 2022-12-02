@@ -1,15 +1,26 @@
-use g++ file 
-this file should contain a main function 
-then run executable to see output with
-./a.exe
+Given a string s, find the length of the longest substring without repeating characters.
 
-the make file is structure in this way 
-(RuleName): (neededRule or neededfile) <-this rule needs to be compiled
-    what runs when (RuleName) is called after make
-(neededRule):  neededFile.cpp
-    g++ neededFile.cpp -o neededFileEX
-run: (neededRule)
-    ./neededFileEX
-see GNUmakefile for an example
+ 
 
-use make (RuleName) to run a make command
+Example 1:
+
+Input: s = "abcabcbb"
+Output: 3
+Explanation: The answer is "abc", with the length of 3.
+Example 2:
+
+Input: s = "bbbbb"
+Output: 1
+Explanation: The answer is "b", with the length of 1.
+Example 3:
+
+Input: s = "pwwkew"
+Output: 3
+Explanation: The answer is "wke", with the length of 3.
+Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
+ 
+
+Constraints:
+
+0 <= s.length <= 5 * 104
+s consists of English letters, digits, symbols and spaces.
