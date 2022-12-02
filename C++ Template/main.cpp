@@ -20,7 +20,8 @@
                newlargest = current.length();
             }
             else{
-               current = current.substr(n, i-n);
+               cout<< "letter exists in current "<<endl;
+               current = current.substr(n+1, i-n) +s[i];
                if(newlargest>largest){
                   largest = newlargest;
                   newlargest = 0;
@@ -29,6 +30,8 @@
 
             }
         }
+        cout<< "out of loop"<<endl;
+        cout<< current<<endl;
         if(newlargest>largest){
           largest = newlargest;
         }
@@ -38,9 +41,12 @@
 
 // main() is where program execution begins.
 int main() {
-   int result= lengthOfLongestSubstring("bbtablud");
+   int result= lengthOfLongestSubstring("au");
    cout<< result<<endl;
-   string s =  " ";
-   cout<<s.length()<<endl;
+  
+   // string current =  " ";
+   // std::string::size_type n;
+   // n = current.find("b");
+   // cout<<s.length()<<endl;
    return 0;
 }
