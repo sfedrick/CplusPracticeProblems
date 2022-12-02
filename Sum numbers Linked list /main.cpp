@@ -21,7 +21,7 @@ ListNode * reverseLL( ListNode *l1){
     return reversed;
 }
 
-ListNode * array2LL( int* begin, int* end){
+ListNode * array2LL(int* begin, int* end){
    ListNode *l1 = new ListNode(*(end-1));
    ListNode *current ;
 
